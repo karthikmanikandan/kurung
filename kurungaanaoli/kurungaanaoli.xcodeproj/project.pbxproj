@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		160C5BBD2E33EF1F0080F0BE /* kurungaanaoli Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 160C5BBC2E33EF1F0080F0BE /* kurungaanaoli Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		160C5BBE2E33EF1F0080F0BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 160C5BB02E33EF1F0080F0BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 160C5BBB2E33EF1F0080F0BE;
+			remoteInfo = "kurungaanaoli Watch App";
+		};
+		160C5BCC2E33EF210080F0BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 160C5BB02E33EF1F0080F0BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 160C5BBB2E33EF1F0080F0BE;
+			remoteInfo = "kurungaanaoli Watch App";
+		};
+		160C5BD62E33EF210080F0BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 160C5BB02E33EF1F0080F0BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 160C5BBB2E33EF1F0080F0BE;
+			remoteInfo = "kurungaanaoli Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		160C5BE22E33EF210080F0BE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				160C5BBD2E33EF1F0080F0BE /* kurungaanaoli Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		160C5BB62E33EF1F0080F0BE /* kurungaanaoli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kurungaanaoli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		160C5BBC2E33EF1F0080F0BE /* kurungaanaoli Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kurungaanaoli Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		160C5BCB2E33EF210080F0BE /* kurungaanaoli Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kurungaanaoli Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		160C5BD52E33EF210080F0BE /* kurungaanaoli Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kurungaanaoli Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		160C5BC02E33EF1F0080F0BE /* kurungaanaoli Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "kurungaanaoli Watch App";
+			sourceTree = "<group>";
+		};
+		160C5BCE2E33EF210080F0BE /* kurungaanaoli Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "kurungaanaoli Watch AppTests";
+			sourceTree = "<group>";
+		};
+		160C5BD82E33EF210080F0BE /* kurungaanaoli Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "kurungaanaoli Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		160C5BB92E33EF1F0080F0BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BC82E33EF210080F0BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BD22E33EF210080F0BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		160C5BAF2E33EF1F0080F0BE = {
+			isa = PBXGroup;
+			children = (
+				160C5BC02E33EF1F0080F0BE /* kurungaanaoli Watch App */,
+				160C5BCE2E33EF210080F0BE /* kurungaanaoli Watch AppTests */,
+				160C5BD82E33EF210080F0BE /* kurungaanaoli Watch AppUITests */,
+				160C5BB72E33EF1F0080F0BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		160C5BB72E33EF1F0080F0BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				160C5BB62E33EF1F0080F0BE /* kurungaanaoli.app */,
+				160C5BBC2E33EF1F0080F0BE /* kurungaanaoli Watch App.app */,
+				160C5BCB2E33EF210080F0BE /* kurungaanaoli Watch AppTests.xctest */,
+				160C5BD52E33EF210080F0BE /* kurungaanaoli Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		160C5BB52E33EF1F0080F0BE /* kurungaanaoli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 160C5BE32E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli" */;
+			buildPhases = (
+				160C5BB42E33EF1F0080F0BE /* Resources */,
+				160C5BE22E33EF210080F0BE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				160C5BBF2E33EF1F0080F0BE /* PBXTargetDependency */,
+			);
+			name = kurungaanaoli;
+			packageProductDependencies = (
+			);
+			productName = kurungaanaoli;
+			productReference = 160C5BB62E33EF1F0080F0BE /* kurungaanaoli.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		160C5BBB2E33EF1F0080F0BE /* kurungaanaoli Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 160C5BDF2E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch App" */;
+			buildPhases = (
+				160C5BB82E33EF1F0080F0BE /* Sources */,
+				160C5BB92E33EF1F0080F0BE /* Frameworks */,
+				160C5BBA2E33EF1F0080F0BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				160C5BC02E33EF1F0080F0BE /* kurungaanaoli Watch App */,
+			);
+			name = "kurungaanaoli Watch App";
+			packageProductDependencies = (
+			);
+			productName = "kurungaanaoli Watch App";
+			productReference = 160C5BBC2E33EF1F0080F0BE /* kurungaanaoli Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		160C5BCA2E33EF210080F0BE /* kurungaanaoli Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 160C5BE62E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch AppTests" */;
+			buildPhases = (
+				160C5BC72E33EF210080F0BE /* Sources */,
+				160C5BC82E33EF210080F0BE /* Frameworks */,
+				160C5BC92E33EF210080F0BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				160C5BCD2E33EF210080F0BE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				160C5BCE2E33EF210080F0BE /* kurungaanaoli Watch AppTests */,
+			);
+			name = "kurungaanaoli Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "kurungaanaoli Watch AppTests";
+			productReference = 160C5BCB2E33EF210080F0BE /* kurungaanaoli Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		160C5BD42E33EF210080F0BE /* kurungaanaoli Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 160C5BE92E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch AppUITests" */;
+			buildPhases = (
+				160C5BD12E33EF210080F0BE /* Sources */,
+				160C5BD22E33EF210080F0BE /* Frameworks */,
+				160C5BD32E33EF210080F0BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				160C5BD72E33EF210080F0BE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				160C5BD82E33EF210080F0BE /* kurungaanaoli Watch AppUITests */,
+			);
+			name = "kurungaanaoli Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "kurungaanaoli Watch AppUITests";
+			productReference = 160C5BD52E33EF210080F0BE /* kurungaanaoli Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		160C5BB02E33EF1F0080F0BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					160C5BB52E33EF1F0080F0BE = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					160C5BBB2E33EF1F0080F0BE = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					160C5BCA2E33EF210080F0BE = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 160C5BBB2E33EF1F0080F0BE;
+					};
+					160C5BD42E33EF210080F0BE = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 160C5BBB2E33EF1F0080F0BE;
+					};
+				};
+			};
+			buildConfigurationList = 160C5BB32E33EF1F0080F0BE /* Build configuration list for PBXProject "kurungaanaoli" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 160C5BAF2E33EF1F0080F0BE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 160C5BB72E33EF1F0080F0BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				160C5BB52E33EF1F0080F0BE /* kurungaanaoli */,
+				160C5BBB2E33EF1F0080F0BE /* kurungaanaoli Watch App */,
+				160C5BCA2E33EF210080F0BE /* kurungaanaoli Watch AppTests */,
+				160C5BD42E33EF210080F0BE /* kurungaanaoli Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		160C5BB42E33EF1F0080F0BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BBA2E33EF1F0080F0BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BC92E33EF210080F0BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BD32E33EF210080F0BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		160C5BB82E33EF1F0080F0BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BC72E33EF210080F0BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160C5BD12E33EF210080F0BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		160C5BBF2E33EF1F0080F0BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 160C5BBB2E33EF1F0080F0BE /* kurungaanaoli Watch App */;
+			targetProxy = 160C5BBE2E33EF1F0080F0BE /* PBXContainerItemProxy */;
+		};
+		160C5BCD2E33EF210080F0BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 160C5BBB2E33EF1F0080F0BE /* kurungaanaoli Watch App */;
+			targetProxy = 160C5BCC2E33EF210080F0BE /* PBXContainerItemProxy */;
+		};
+		160C5BD72E33EF210080F0BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 160C5BBB2E33EF1F0080F0BE /* kurungaanaoli Watch App */;
+			targetProxy = 160C5BD62E33EF210080F0BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		160C5BDD2E33EF210080F0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		160C5BDE2E33EF210080F0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		160C5BE02E33EF210080F0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = kurungaanaoli;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = karkon.kurungaanaoli.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		160C5BE12E33EF210080F0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = kurungaanaoli;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = karkon.kurungaanaoli.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		160C5BE42E33EF210080F0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				INFOPLIST_KEY_CFBundleDisplayName = kurungaanaoli;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = karkon.kurungaanaoli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		160C5BE52E33EF210080F0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				INFOPLIST_KEY_CFBundleDisplayName = kurungaanaoli;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = karkon.kurungaanaoli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		160C5BE72E33EF210080F0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "karkon.kurungaanaoli-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kurungaanaoli Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kurungaanaoli Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		160C5BE82E33EF210080F0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "karkon.kurungaanaoli-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kurungaanaoli Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kurungaanaoli Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		160C5BEA2E33EF210080F0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "karkon.kurungaanaoli-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "kurungaanaoli Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		160C5BEB2E33EF210080F0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TL8R2CM762;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "karkon.kurungaanaoli-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "kurungaanaoli Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		160C5BB32E33EF1F0080F0BE /* Build configuration list for PBXProject "kurungaanaoli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160C5BDD2E33EF210080F0BE /* Debug */,
+				160C5BDE2E33EF210080F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		160C5BDF2E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160C5BE02E33EF210080F0BE /* Debug */,
+				160C5BE12E33EF210080F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		160C5BE32E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160C5BE42E33EF210080F0BE /* Debug */,
+				160C5BE52E33EF210080F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		160C5BE62E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160C5BE72E33EF210080F0BE /* Debug */,
+				160C5BE82E33EF210080F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		160C5BE92E33EF210080F0BE /* Build configuration list for PBXNativeTarget "kurungaanaoli Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				160C5BEA2E33EF210080F0BE /* Debug */,
+				160C5BEB2E33EF210080F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 160C5BB02E33EF1F0080F0BE /* Project object */;
+}
