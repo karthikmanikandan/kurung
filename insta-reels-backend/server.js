@@ -53,19 +53,19 @@ async function processScrapingQueue() {
   }
 }
 
-// Environment variable to control mock data - default to true for reliability
-const USE_MOCK_DATA = process.env.USE_MOCK_DATA !== 'false';
+// Environment variable to control mock data - default to false for real YouTube Shorts
+const USE_MOCK_DATA = process.env.USE_MOCK_DATA === 'true';
 
 console.log('🚀 YouTube Shorts Backend Setup');
 console.log(`📊 Mock Data: ${USE_MOCK_DATA ? 'ENABLED' : 'DISABLED'}`);
 console.log('✅ No login required for YouTube Shorts');
 
 console.log('\n🌐 Starting the API server...');
-console.log(`🔧 The server will be available at: http://localhost:${PORT}`);
-  console.log('🔧 Available endpoints:');
-  console.log('   - GET  /health - Health check');
-  console.log('   - GET  /reels?limit=N - Get YouTube Shorts (limit optional)');
-  console.log('   - POST /refresh - Force refresh Shorts');
+console.log(`🔧 Server running on port: ${PORT}`);
+console.log('🔧 Available endpoints:');
+console.log('   - GET  /health - Health check');
+console.log('   - GET  /reels?limit=N - Get YouTube Shorts (limit optional)');
+console.log('   - POST /refresh - Force refresh Shorts');
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -231,9 +231,10 @@ function generateMockReels(limit) {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`🎉 YouTube Shorts Server is running on http://localhost:${PORT}`);
+  console.log(`🎉 YouTube Shorts Server is running on port ${PORT}`);
   console.log('📱 Ready to receive requests from WatchOS app!');
   console.log('🎬 No authentication required for YouTube Shorts');
+  console.log('🚀 Deployed on Render - Production ready!');
 });
 
 module.exports = app;

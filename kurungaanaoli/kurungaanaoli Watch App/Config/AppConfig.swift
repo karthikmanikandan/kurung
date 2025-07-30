@@ -2,12 +2,10 @@ import Foundation
 
 // MARK: - App Configuration
 struct AppConfig {
-    // Backend URL - update this with your production server URL
-    // For local development: "http://localhost:3000" (Mac's localhost)
-    // For production: "https://your-production-server.com"
-    // For ngrok testing: "https://d0568e27707e.ngrok-free.app"
-    // For Render deployment: "https://kurung-backend-xxxx.onrender.com"
-    static let baseURL = "https://kurung.onrender.com" // Live Render backend
+    // Backend URL - Render deployment
+// Production: "https://kurung.onrender.com" (Live Render backend)
+// Development: "http://localhost:3000" (Local development only)
+static let baseURL = "https://kurung.onrender.com" // Live Render backend
     
     // API endpoints
     struct API {

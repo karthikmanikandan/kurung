@@ -9,26 +9,20 @@ let activeBrowser = null;
 let browserStartTime = null;
 
 async function fetchReels(limit = 10) {
-  // For now, return mock data to ensure reliability
-  console.log('🎭 Using mock data for reliability');
-  return generateFallbackShorts(limit);
+  console.log('🚀 Starting real YouTube Shorts scraping...');
   
-  // TODO: Re-enable real scraping when stable
-  /*
+  // Clean up any existing browser instance
   if (activeBrowser) {
-    console.log('⚠️ Browser already active, waiting for completion...');
-    const maxWaitTime = 30000; // 30 seconds
-    const elapsed = Date.now() - browserStartTime;
-    if (elapsed > maxWaitTime) {
-      console.log('🔄 Force closing stale browser instance...');
+    console.log('🔄 Closing existing browser instance...');
+    try {
       await activeBrowser.close();
-      activeBrowser = null;
-    } else {
-      throw new Error('Scraping already in progress');
+    } catch (error) {
+      console.log('⚠️ Error closing browser:', error.message);
     }
+    activeBrowser = null;
   }
 
-  console.log('🚀 Starting YouTube Shorts scraping...');
+  console.log('🚀 Launching new browser for YouTube Shorts scraping...');
   activeBrowser = await puppeteer.launch({
     headless: true, // Set to true for production
     args: [
@@ -44,7 +38,6 @@ async function fetchReels(limit = 10) {
     ]
   });
   browserStartTime = Date.now();
-  */
 
   const page = await activeBrowser.newPage();
 
