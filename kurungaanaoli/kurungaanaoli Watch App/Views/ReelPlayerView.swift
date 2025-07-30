@@ -49,7 +49,7 @@ struct ReelPlayerView: View {
                                 } else if verticalAmount > 30 { // Swipe down
                                     viewModel.previousReel()
                                 }
-                            } else {
+                } else {
                                 // Horizontal swipe (alternative navigation)
                                 if horizontalAmount < -30 { // Swipe left
                                     viewModel.nextReel()

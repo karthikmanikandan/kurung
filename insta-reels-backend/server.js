@@ -12,7 +12,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // Enhanced CORS for WatchOS app
 app.use(cors({
-  origin: isProduction ? ['https://kurung-backend.onrender.com'] : ['*'], // Production vs development
+  origin: isProduction ? ['*'] : ['*'], // Allow all origins for WatchOS app
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Session-Token']
 }));
@@ -53,8 +53,8 @@ async function processScrapingQueue() {
   }
 }
 
-// Environment variable to control mock data
-const USE_MOCK_DATA = process.env.USE_MOCK_DATA === 'true';
+// Environment variable to control mock data - default to true for reliability
+const USE_MOCK_DATA = process.env.USE_MOCK_DATA !== 'false';
 
 console.log('🚀 YouTube Shorts Backend Setup');
 console.log(`📊 Mock Data: ${USE_MOCK_DATA ? 'ENABLED' : 'DISABLED'}`);
@@ -173,36 +173,36 @@ function generateMockReels(limit) {
   const verticalVideos = [
     {
       type: 'short',
-      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-      videoId: 'for-bigger-blazes',
+      link: 'https://www.youtube.com/shorts/sample1',
+      videoId: 'sample1',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-      videoId: 'for-bigger-escapes',
+      link: 'https://www.youtube.com/shorts/sample2',
+      videoId: 'sample2',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-      videoId: 'for-bigger-fun',
+      link: 'https://www.youtube.com/shorts/sample3',
+      videoId: 'sample3',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-      videoId: 'for-bigger-joyrides',
+      link: 'https://www.youtube.com/shorts/sample4',
+      videoId: 'sample4',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
-      videoId: 'for-bigger-meltdowns',
+      link: 'https://www.youtube.com/shorts/sample5',
+      videoId: 'sample5',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
       scrapedAt: new Date().toISOString()
     }
@@ -211,13 +211,12 @@ function generateMockReels(limit) {
   for (let i = 0; i < limit; i++) {
     const baseVideo = verticalVideos[i % verticalVideos.length];
     const uniqueId = `${baseVideo.videoId}-${Date.now()}-${i}`;
-    const uniqueUrl = `${baseVideo.videoUrl}?t=${Date.now()}&i=${i}`;
     
     mockShorts.push({
       type: 'short',
-      link: `https://www.youtube.com/shorts/${uniqueId}`,
+      link: baseVideo.link,
       videoId: uniqueId,
-      videoUrl: uniqueUrl,
+      videoUrl: baseVideo.videoUrl,
       scrapedAt: new Date().toISOString()
     });
   }

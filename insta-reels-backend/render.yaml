@@ -9,6 +9,6 @@ services:
       - key: NODE_ENV
         value: production
       - key: USE_MOCK_DATA
-        value: true
+        value: "true"
       - key: PORT
         value: 10000 
