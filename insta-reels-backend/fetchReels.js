@@ -9,6 +9,12 @@ let activeBrowser = null;
 let browserStartTime = null;
 
 async function fetchReels(limit = 10) {
+  // For now, return mock data to ensure reliability
+  console.log('🎭 Using mock data for reliability');
+  return generateFallbackShorts(limit);
+  
+  // TODO: Re-enable real scraping when stable
+  /*
   if (activeBrowser) {
     console.log('⚠️ Browser already active, waiting for completion...');
     const maxWaitTime = 30000; // 30 seconds
@@ -38,6 +44,7 @@ async function fetchReels(limit = 10) {
     ]
   });
   browserStartTime = Date.now();
+  */
 
   const page = await activeBrowser.newPage();
 

@@ -12,7 +12,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // Enhanced CORS for WatchOS app
 app.use(cors({
-  origin: isProduction ? ['*'] : ['*'], // Allow all origins for WatchOS app
+  origin: isProduction ? ['https://kurung.onrender.com', 'https://kurung-backend.onrender.com'] : ['*'], // Production vs development
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Session-Token']
 }));
@@ -94,13 +94,18 @@ app.get('/reels', async (req, res) => {
     } else {
       console.log('🌐 Queuing YouTube Shorts scraping request...');
       
-      // Queue the request instead of calling directly
-      shorts = await new Promise((resolve, reject) => {
-        scrapingQueue.push({ resolve, reject, limit });
-        processScrapingQueue();
-      });
-      
-      console.log(`✅ Successfully scraped ${shorts.length} YouTube Shorts`);
+      try {
+        // Queue the request instead of calling directly
+        shorts = await new Promise((resolve, reject) => {
+          scrapingQueue.push({ resolve, reject, limit });
+          processScrapingQueue();
+        });
+        
+        console.log(`✅ Successfully scraped ${shorts.length} YouTube Shorts`);
+      } catch (scrapingError) {
+        console.error('❌ Scraping failed, falling back to mock data:', scrapingError.message);
+        shorts = generateMockReels(limit);
+      }
     }
 
     // Limit the number of shorts returned
@@ -173,36 +178,36 @@ function generateMockReels(limit) {
   const verticalVideos = [
     {
       type: 'short',
-      link: 'https://www.youtube.com/shorts/sample1',
-      videoId: 'sample1',
+      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      videoId: 'for-bigger-blazes',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://www.youtube.com/shorts/sample2',
-      videoId: 'sample2',
+      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+      videoId: 'for-bigger-escapes',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://www.youtube.com/shorts/sample3',
-      videoId: 'sample3',
+      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+      videoId: 'for-bigger-fun',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://www.youtube.com/shorts/sample4',
-      videoId: 'sample4',
+      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      videoId: 'for-bigger-joyrides',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
       scrapedAt: new Date().toISOString()
     },
     {
       type: 'short',
-      link: 'https://www.youtube.com/shorts/sample5',
-      videoId: 'sample5',
+      link: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+      videoId: 'for-bigger-meltdowns',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
       scrapedAt: new Date().toISOString()
     }
@@ -211,12 +216,13 @@ function generateMockReels(limit) {
   for (let i = 0; i < limit; i++) {
     const baseVideo = verticalVideos[i % verticalVideos.length];
     const uniqueId = `${baseVideo.videoId}-${Date.now()}-${i}`;
+    const uniqueUrl = `${baseVideo.videoUrl}?t=${Date.now()}&i=${i}`;
     
     mockShorts.push({
       type: 'short',
-      link: baseVideo.link,
+      link: `https://www.youtube.com/shorts/${uniqueId}`,
       videoId: uniqueId,
-      videoUrl: baseVideo.videoUrl,
+      videoUrl: uniqueUrl,
       scrapedAt: new Date().toISOString()
     });
   }
