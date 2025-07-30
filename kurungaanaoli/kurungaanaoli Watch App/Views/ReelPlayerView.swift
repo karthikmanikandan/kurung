@@ -228,35 +228,35 @@ class VideoPlayerManager: ObservableObject {
     private var playerObserver: NSKeyValueObservation?
     private var timeoutTimer: Timer?
     
-                    // Fallback video URLs for testing - using working Google videos
-                private let fallbackVideos = [
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
-                ]
+    // Fallback video URLs for testing - using reliable videos for watch simulator
+    private let fallbackVideos = [
+        "https://www.w3schools.com/html/mov_bbb.mp4",
+        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+        "https://file-examples.com/storage/fe68c0e8c0c7a3b0193bf57/2017/10/file_example_MP4_480_1_5MG.mp4"
+    ]
     
-                    func loadVideo(url: String) {
-                    // VideoPlayerManager loading video: \(url)
-                    isLoading = true
-                    hasError = false
-                    errorMessage = ""
-                    
-                    guard let videoURL = URL(string: url) else {
-                        // Invalid URL format: \(url)
-                        hasError = true
-                        isLoading = false
-                        errorMessage = "Invalid video URL"
-                        return
-                    }
-                    
-                    // Check if URL is HTTPS and log status
-                    if videoURL.scheme == "https" {
-                        // Loading HTTPS URL - should work without ATS issues
-                    } else if videoURL.scheme == "http" {
-                        // Loading HTTP URL - ATS should allow this
-                    }
+    func loadVideo(url: String) {
+        // VideoPlayerManager loading video: \(url)
+        isLoading = true
+        hasError = false
+        errorMessage = ""
+        
+        guard let videoURL = URL(string: url) else {
+            // Invalid URL format: \(url)
+            hasError = true
+            isLoading = false
+            errorMessage = "Invalid video URL"
+            return
+        }
+        
+        // Check if URL is HTTPS and log status
+        if videoURL.scheme == "https" {
+            // Loading HTTPS URL - should work without ATS issues
+        } else if videoURL.scheme == "http" {
+            // Loading HTTP URL - ATS should allow this
+        }
         
         // Cleanup previous player
         cleanup()
@@ -282,33 +282,33 @@ class VideoPlayerManager: ObservableObject {
             self.player?.play()
         }
         
-                            // VideoPlayerManager setup complete for: \(url)
+        // VideoPlayerManager setup complete for: \(url)
     }
     
-                    func play() {
-                    // Playing video
-                    player?.play()
-                }
-                
-                func pause() {
-                    // Pausing video
-                    player?.pause()
-                }
+    func play() {
+        // Playing video
+        player?.play()
+    }
     
-                    func reloadVideo() {
-                    if let currentURL = playerItem?.asset as? AVURLAsset {
-                        // Reloading video: \(currentURL.url.absoluteString)
-                        loadVideo(url: currentURL.url.absoluteString)
-                    } else {
-                        // No current video to reload
-                    }
-                }
+    func pause() {
+        // Pausing video
+        player?.pause()
+    }
     
-                    func loadFallbackVideo() {
-                    let fallbackURL = fallbackVideos.randomElement() ?? fallbackVideos[0]
-                    // Loading fallback video: \(fallbackURL)
-                    loadVideo(url: fallbackURL)
-                }
+    func reloadVideo() {
+        if let currentURL = playerItem?.asset as? AVURLAsset {
+            // Reloading video: \(currentURL.url.absoluteString)
+            loadVideo(url: currentURL.url.absoluteString)
+        } else {
+            // No current video to reload
+        }
+    }
+    
+    func loadFallbackVideo() {
+        let fallbackURL = fallbackVideos.randomElement() ?? fallbackVideos[0]
+        // Loading fallback video: \(fallbackURL)
+        loadVideo(url: fallbackURL)
+    }
     
     func cleanup() {
         // Cancel timeout timer
@@ -341,99 +341,87 @@ class VideoPlayerManager: ObservableObject {
     }
     
     private func startTimeoutTimer() {
-                            timeoutTimer = Timer.scheduledTimer(withTimeInterval: 8.0, repeats: false) { [weak self] _ in
-                        DispatchQueue.main.async {
-                            if self?.isLoading == true {
-                                // Video loading timeout - showing error instead of fallback
-                                self?.hasError = true
-                                self?.isLoading = false
-                                self?.errorMessage = "Video loading timeout"
-                                // Don't auto-fallback to prevent loops - let user retry manually
-                            }
-                        }
-                    }
+        timeoutTimer = Timer.scheduledTimer(withTimeInterval: 8.0, repeats: false) { [weak self] _ in
+            DispatchQueue.main.async {
+                if self?.isLoading == true {
+                    // Video loading timeout - showing error instead of fallback
+                    self?.hasError = true
+                    self?.isLoading = false
+                    self?.errorMessage = "Video loading timeout"
+                    // Don't auto-fallback to prevent loops - let user retry manually
+                }
+            }
+        }
     }
     
     private func setupObservers() {
         guard let player = player, let playerItem = playerItem else { return }
         
-        // Observe player item status using modern KVO
-                            playerItemObserver = playerItem.observe(\.status, options: [.new, .initial]) { [weak self] item, _ in
-                        DispatchQueue.main.async {
-                            // PlayerItem status changed to: \(item.status.rawValue)
-                            switch item.status {
-                            case .readyToPlay:
-                                // PlayerItem ready to play
-                                self?.timeoutTimer?.invalidate()
-                                self?.isLoading = false
-                            case .failed:
-                                let errorMessage = item.error?.localizedDescription ?? "Unknown error"
-                                // PlayerItem failed: \(errorMessage)
-                                self?.timeoutTimer?.invalidate()
-                                self?.hasError = true
-                                self?.isLoading = false
-                                self?.errorMessage = errorMessage
-                                
-                                // Check if it's an ATS/SSL error and try HTTP fallback immediately
-                                if errorMessage.contains("SSL") || errorMessage.contains("secure connection") || errorMessage.contains("App Transport Security") || errorMessage.contains("-1022") {
-                                    // ATS/SSL error detected, trying HTTP fallback immediately
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        self?.loadFallbackVideo()
-                                    }
-                                } else {
-                                    // Try fallback after a short delay
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                        self?.loadFallbackVideo()
-                                    }
-                                }
-                            case .unknown:
-                                // PlayerItem status unknown
-                                self?.isLoading = true
-                            @unknown default:
-                                // PlayerItem unknown status
-                                self?.isLoading = true
-                            }
-                        }
+        // Observe player item status with better error handling
+        playerItemObserver = playerItem.observe(\.status, options: [.new, .initial]) { [weak self] item, _ in
+            DispatchQueue.main.async {
+                switch item.status {
+                case .readyToPlay:
+                    self?.timeoutTimer?.invalidate()
+                    self?.isLoading = false
+                    self?.hasError = false
+                case .failed:
+                    let errorMessage = item.error?.localizedDescription ?? "Unknown error"
+                    self?.timeoutTimer?.invalidate()
+                    self?.hasError = true
+                    self?.isLoading = false
+                    self?.errorMessage = errorMessage
+                    
+                    // Try fallback video immediately
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self?.loadFallbackVideo()
                     }
-    
+                case .unknown:
+                    self?.isLoading = true
+                @unknown default:
+                    self?.isLoading = true
+                }
+            }
+        }
+        
         // Observe player status using modern KVO
-                            playerObserver = player.observe(\.status, options: [.new, .initial]) { [weak self] player, _ in
-                        DispatchQueue.main.async {
-                            // Player status changed to: \(player.status.rawValue)
-                            switch player.status {
-                            case .readyToPlay:
-                                // Player ready to play
-                                self?.timeoutTimer?.invalidate()
-                                self?.isLoading = false
-                            case .failed:
-                                let errorMessage = player.error?.localizedDescription ?? "Unknown error"
-                                // Player failed: \(errorMessage)
-                                self?.timeoutTimer?.invalidate()
-                                self?.hasError = true
-                                self?.isLoading = false
-                                self?.errorMessage = errorMessage
-                                
-                                // Check if it's an ATS/SSL error and try HTTP fallback immediately
-                                if errorMessage.contains("SSL") || errorMessage.contains("secure connection") || errorMessage.contains("App Transport Security") || errorMessage.contains("-1022") {
-                                    // ATS/SSL error detected, trying HTTP fallback immediately
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        self?.loadFallbackVideo()
-                                    }
-                                } else {
-                                    // Try fallback after a short delay
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                        self?.loadFallbackVideo()
-                                    }
-                                }
-                            case .unknown:
-                                // Player status unknown
-                                self?.isLoading = true
-                            @unknown default:
-                                // Player unknown status
-                                self?.isLoading = true
-                            }
+        playerObserver = player.observe(\.status, options: [.new, .initial]) { [weak self] player, _ in
+            DispatchQueue.main.async {
+                // Player status changed to: \(player.status.rawValue)
+                switch player.status {
+                case .readyToPlay:
+                    // Player ready to play
+                    self?.timeoutTimer?.invalidate()
+                    self?.isLoading = false
+                case .failed:
+                    let errorMessage = player.error?.localizedDescription ?? "Unknown error"
+                    // Player failed: \(errorMessage)
+                    self?.timeoutTimer?.invalidate()
+                    self?.hasError = true
+                    self?.isLoading = false
+                    self?.errorMessage = errorMessage
+                    
+                    // Check if it's an ATS/SSL error and try HTTP fallback immediately
+                    if errorMessage.contains("SSL") || errorMessage.contains("secure connection") || errorMessage.contains("App Transport Security") || errorMessage.contains("-1022") {
+                        // ATS/SSL error detected, trying HTTP fallback immediately
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self?.loadFallbackVideo()
+                        }
+                    } else {
+                        // Try fallback after a short delay
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self?.loadFallbackVideo()
                         }
                     }
+                case .unknown:
+                    // Player status unknown
+                    self?.isLoading = true
+                @unknown default:
+                    // Player unknown status
+                    self?.isLoading = true
+                }
+            }
+        }
         
         // Add notification for when video ends
         NotificationCenter.default.addObserver(
@@ -444,12 +432,12 @@ class VideoPlayerManager: ObservableObject {
         )
     }
     
-                    @objc private func playerItemDidReachEnd() {
-                    // Video ended - looping
-                    // Loop the video
-                    player?.seek(to: .zero)
-                    player?.play()
-                }
+    @objc private func playerItemDidReachEnd() {
+        // Video ended - looping
+        // Loop the video
+        player?.seek(to: .zero)
+        player?.play()
+    }
     
     deinit {
         cleanup()

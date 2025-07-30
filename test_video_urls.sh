@@ -27,3 +27,26 @@ echo ""
 echo "🔒 Testing ATS compatibility..."
 # Test with curl to simulate what AVPlayer might see
 curl -s -I "$VIDEO_URL" | head -5 
+
+echo ""
+echo "�� Testing Video URLs for Watch Simulator"
+echo "=========================================="
+
+# Test URLs
+VIDEO_URLS=(
+    "https://www.w3schools.com/html/mov_bbb.mp4"
+    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+    "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    "https://file-examples.com/storage/fe68c0e8c0c7a3b0193bf57/2017/10/file_example_MP4_480_1_5MG.mp4"
+)
+
+for url in "${VIDEO_URLS[@]}"; do
+    echo "Testing: $url"
+    if curl -I -s "$url" | head -1 | grep -q "200\|206"; then
+        echo "✅ Working"
+    else
+        echo "❌ Failed"
+    fi
+    echo "---"
+done 
